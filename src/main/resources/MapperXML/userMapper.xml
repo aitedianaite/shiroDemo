@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ck.demo.mapper.UserMapper">
+    <select id="findByName" parameterType="string" resultType="com.ck.demo.pojo.User">
+      select id,username,password from users where users.username=#{username}
+    </select>
+</mapper>

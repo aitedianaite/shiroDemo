@@ -1,7 +1,7 @@
 package com.ck.demo.controller;
 
 
-import com.ck.demo.mapper.UserMapper;
+import com.ck.demo.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -23,7 +23,7 @@ public class userController {
     private final Logger logger=LoggerFactory.getLogger(userController.class);
 
     @Autowired
-    UserMapper userMapper;
+    private UserService userService;
 
     @RequestMapping("/hello")
     @ResponseBody
@@ -55,7 +55,7 @@ public class userController {
         model.addAttribute("name", "黑马程序员");
         //返回test.html
 
-        userMapper.findByName("haha");
+        userService.userService("haha");
         return "test";
     }
     /**
